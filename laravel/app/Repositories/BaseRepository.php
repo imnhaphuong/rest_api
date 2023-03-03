@@ -23,9 +23,9 @@ abstract class BaseRepository implements RepositoryInterface
         );
     }
 
-    public function insert($i_id, $i_data = [])
+    public function insertRecord( $i_data=[])
     {
-        return $this->model->find($i_id);
+        return $this->model->create($i_data);
     }
 
     public function getById($i_id)
@@ -33,28 +33,28 @@ abstract class BaseRepository implements RepositoryInterface
         return $this->model->findOrFail($i_id);
     }
 
-    public function remove($i_id)
+    public function removeRecord($i_id)
     {
     }
 
-    public function selectAll()
+    public function selectAllRecord()
     {
         return $this->model->all();
     }
 
-    public function update($i_id, $i_data = [])
+    public function updateRecord($i_id, $i_data = [])
     {
         $object = $this->getById($i_id);
         return $object->update($i_data);
     }
 
-    public function delete($i_id)
+    public function deleteRecord($i_id)
     {
         $object = $this->model->find($i_id);
         return $object->delete();
     }
 
-    public function upsert($i_id, $i_data = [])
+    public function upsertRecord($i_id, $i_data = [])
     {
         $object = $this->model->find($i_id);
         return $object->upsert();

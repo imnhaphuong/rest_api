@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Item;
 
 use App\Models\Item;
+use App\Repositories\BaseRepository;
 
-class ItemRepository extends BaseRepository
+class ItemRepository extends BaseRepository implements ItemRepositoryInterface
 {
     public function getModel()
     {

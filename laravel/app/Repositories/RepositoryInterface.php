@@ -9,7 +9,7 @@ interface RepositoryInterface
      * @param  mixed $i_id
      * @return mixed
      */
-    public function delete($i_id);
+    public function deleteRecord($i_id);
 
     /**
      * Insert new record
@@ -17,7 +17,7 @@ interface RepositoryInterface
      * @param  array $i_data
      * @return mixed
      */
-    public function insert($i_id, $i_data = []);
+    public function insertRecord($i_data = []);
     /**
      * Get one
      * @param  mixed $i_id
@@ -31,13 +31,13 @@ interface RepositoryInterface
      * @param  mixed $i_id
      * @return mixed
      */
-    public function remove($i_id);
+    public function removeRecord($i_id);
 
     /**
      * Select all
      * @return mixed
      */
-    public function selectAll();
+    public function selectAllRecord();
 
     /**
      * Update record
@@ -45,7 +45,7 @@ interface RepositoryInterface
      * @param  array $i_data
      * @return mixed
      */
-    public function update($i_id, $i_data = []);
+    public function updateRecord($i_id, $i_data = []);
 
     /**
      * Upsert record
@@ -53,5 +53,5 @@ interface RepositoryInterface
      * @param  array $i_data
      * @return mixed
      */
-    public function upsert($i_id, $i_data = []);
+    public function upsertRecord($i_id, $i_data = []);
 }

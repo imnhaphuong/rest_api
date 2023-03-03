@@ -1,6 +1,6 @@
 <?php
 
-use App\Repositories\ItemRepository;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (ItemRepository $itemRepository) { 
-    // return view('welcome');
-    return $itemRepository->selectAll();
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [ItemController::class, 'index']);
